@@ -1,0 +1,21 @@
+ static ArrayList < ArrayList < Integer >> threeSum(int nums[]) {
+        ArrayList < ArrayList < Integer >> ans = new ArrayList < > ();
+
+        int i, j, k;
+        for (i = 0; i < nums.length - 2; i++) {
+            for (j = i + 1; j < nums.length - 1; j++) {
+                for (k = j + 1; k < nums.length; k++) {
+                    ArrayList < Integer > temp = new ArrayList < > ();
+                    if (nums[i] + nums[j] + nums[k] == 0) {
+                        temp.add(nums[i]);
+                        temp.add(nums[j]);
+                        temp.add(nums[k]);
+                    }
+                    if (temp.size() != 0)
+                        ans.add(temp);
+                }
+            }
+        }
+
+        return ans;
+    }
