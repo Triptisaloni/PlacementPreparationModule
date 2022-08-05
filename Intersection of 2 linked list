@@ -1,0 +1,13 @@
+static Node intersectionPresent(Node head1,Node head2) {
+     HashSet<Node> st=new HashSet<>();
+    while(head1 != null) {
+       st.add(head1);
+       head1 = head1.next;
+    }
+    while(head2 != null) {
+        if(st.contains(head2)) return head2;
+        head2 = head2.next;
+    }
+    return null;
+
+}
